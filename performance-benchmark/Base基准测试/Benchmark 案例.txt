@@ -1,0 +1,11 @@
+测试实战项目 String Truncation方法的最快时间
+
+InputStream to a String: Performance tests
+https://stackoverflow.com/questions/309424/how-do-i-read-convert-an-inputstream-into-a-string-in-java
+
+
+基准测试框架 Java Microbenchmark Harness (JMH)
+openjdk.jmh
+https://github.com/openjdk/jmh
+https://openjdk.org/projects/code-tools/jmh/
+https://www.loicmathieu.fr/wordpress/informatique/introduction-a-jmh-java-microbenchmark-harness/
