@@ -8,7 +8,7 @@ TODO. 项目打包生成文件jar包中包含什么 ？
      Manifest-Version: 1.0
      Archiver-Version: Plexus Archiver
      Created-By: Apache Maven 3.6.3
-     Start-Class: com.example.Application jar包启动的Main方法所在的类
+     Start-Class: com.concatenated.Application jar包启动的Main方法所在的类
      Main-Class: org.springframework.boot.loader.JarLauncher
      Built-By: xxx
      Build-Jdk: 11.0.2-BellSoft

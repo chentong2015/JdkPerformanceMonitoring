@@ -1,0 +1,32 @@
+针对每一个Bench测试的热身次数和循环次数
+
+# Blackhole mode: compiler (auto-detected, use -Djmh.blackhole.autoDetect=false to disable)
+# Warmup: 5 iterations, 10 s each
+# Measurement: 5 iterations, 10 s each
+# Timeout: 10 min per iteration
+# Threads: 1 thread, will synchronize iterations
+# Benchmark mode: Average time, time/op
+# Benchmark: concatenated.ConcatenatedStringBenchmark.benchmarkStringBuffer
+
+
+测试单个操作的时间比较能够比较快慢
+# Benchmark mode: Single shot invocation time
+Benchmark                                           Mode  Cnt  Score   Error  Units
+ConcatenatedStringBenchmark.benchmarkStringBuffer     ss    2  1.571          ms/op
+ConcatenatedStringBenchmark.benchmarkStringBuilder    ss    2  1.500          ms/op
+ConcatenatedStringBenchmark.benchmarkStringConcat     ss    2  1.740          ms/op
+
+测试每一毫秒能够执行多少的Operation操作
+# Warmup: 2 iterations, 10 s each
+# Measurement: 2 iterations, 10 s each
+# Timeout: 10 min per iteration
+# Threads: 1 thread, will synchronize iterations
+# Benchmark mode: Throughput, ops/time
+# Benchmark: concatenated.ConcatenatedStringBenchmark.benchmarkStringBuffer
+
+# Run progress: 0.00% complete, ETA 00:02:00
+# Fork: 1 of 1
+# Warmup Iteration   1: 4.728 ops/ms
+# Warmup Iteration   2: 4.794 ops/ms
+Iteration   1: 4.661 ops/ms
+Iteration   2: 4.413 ops/ms

@@ -1,6 +1,6 @@
-package benchmark.model;
+package escaped.model;
 
-public class TruncateInfos {
+public class TruncatedInfo {
 
     public final String tableName;
     public final String columnName;
@@ -9,7 +9,7 @@ public class TruncateInfos {
     public String columnValue;
     public String truncatedValue;
 
-    public TruncateInfos(String tableName, String columnName, String columnTypeName, int columnDisplaySize,
+    public TruncatedInfo(String tableName, String columnName, String columnTypeName, int columnDisplaySize,
                          String columnValue, String truncatedValue) {
         this.tableName = tableName;
         this.columnName = columnName;

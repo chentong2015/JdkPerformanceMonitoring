@@ -1,4 +1,4 @@
-package benchmark.escaped;
+package escaped.cases;
 
 import java.io.IOException;
 import java.io.Writer;
