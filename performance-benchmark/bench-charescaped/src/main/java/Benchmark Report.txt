@@ -1,0 +1,27 @@
+TODO. 基于Single shot invocation time单次调用时间
+# Benchmark mode: SingleShotTime
+Benchmark                                        Mode  Cnt   Score   Error  Units
+EscapedWriterBenchmark.testBaseWithoutEscape       ss    2  21.550          us/op
+EscapedWriterBenchmark.testStringBuilderEscaped    ss    2  14.650          us/op
+EscapedWriterBenchmark.testStringUtilsEscaped      ss    2  88.550          us/op
+EscapedWriterBenchmark.testWriterEscaped           ss    2  15.900          us/op
+
+TODO. 基于Throughput吞吐量维度
+# Warmup: 2 iterations, 10 s each
+# Measurement: 2 iterations, 10 s each
+# Timeout: 10 s per iteration, ***WARNING: The timeout might be too low!***
+# Threads: 1 thread, will synchronize iterations
+# Benchmark mode: Throughput, ops/time
+Benchmark                                         Mode  Cnt        Score   Error  Units
+EscapedWriterBenchmark.testBaseWithoutEscape     thrpt    2  6459010.368          ops/s
+EscapedWriterBenchmark.testStringBuilderEscaped  thrpt    2  3036945.932          ops/s
+EscapedWriterBenchmark.testStringUtilsEscaped    thrpt    2  1321809.325          ops/s
+EscapedWriterBenchmark.testWriterEscaped         thrpt    2  1223986.294          ops/s
+
+TODO. 基于Average time平均时间
+# Benchmark mode: Average time, time/op
+Benchmark                                        Mode  Cnt  Score   Error  Units
+EscapedWriterBenchmark.testBaseWithoutEscape     avgt    2  0.154          us/op
+EscapedWriterBenchmark.testStringBuilderEscaped  avgt    2  0.349          us/op
+EscapedWriterBenchmark.testStringUtilsEscaped    avgt    2  0.613          us/op
+EscapedWriterBenchmark.testWriterEscaped         avgt    2  0.842          us/op
