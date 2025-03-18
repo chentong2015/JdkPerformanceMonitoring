@@ -1,4 +1,4 @@
-package benchmarks.model;
+package escaped.model;
 
 public class TruncatedInfo {
 

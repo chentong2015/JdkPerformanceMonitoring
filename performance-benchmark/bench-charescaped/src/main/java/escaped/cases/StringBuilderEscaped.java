@@ -1,4 +1,4 @@
-package benchmarks.escaped;
+package escaped.cases;
 
 public class StringBuilderEscaped {
 

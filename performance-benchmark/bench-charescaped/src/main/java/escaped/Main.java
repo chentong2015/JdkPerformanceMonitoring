@@ -1,4 +1,4 @@
-package benchmarks.test;
+package escaped;
 
 public class Main {
 

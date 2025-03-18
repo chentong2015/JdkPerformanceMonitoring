@@ -1,10 +1,10 @@
-package benchmarks.test;
+package escaped;
 
-import benchmarks.escaped.StringBuilderEscaped;
-import benchmarks.escaped.StringUtilsEscaped;
-import benchmarks.escaped.WriterEscaped;
-import benchmarks.model.NullOutputStream;
-import benchmarks.model.NullWriter;
+import escaped.cases.StringBuilderEscaped;
+import escaped.cases.StringUtilsEscaped;
+import escaped.cases.WriterEscaped;
+import escaped.model.NullOutputStream;
+import escaped.model.NullWriter;
 import org.apache.commons.lang3.RandomStringUtils;
 import org.openjdk.jmh.annotations.*;
 

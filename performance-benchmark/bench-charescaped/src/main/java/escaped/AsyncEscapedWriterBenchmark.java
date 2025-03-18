@@ -1,9 +1,9 @@
-package benchmarks.test;
+package escaped;
 
 import org.apache.commons.lang3.RandomStringUtils;
-import benchmarks.escaped.StringBuilderEscaped;
-import benchmarks.model.NullOutputStream;
-import benchmarks.model.TruncatedInfo;
+import escaped.cases.StringBuilderEscaped;
+import escaped.model.NullOutputStream;
+import escaped.model.TruncatedInfo;
 
 import java.io.BufferedOutputStream;
 import java.io.IOException;
