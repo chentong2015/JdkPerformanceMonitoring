@@ -18,6 +18,7 @@
     <modules>
         <module>bench-concat</module>
         <module>bench-charescaped</module>
+        <module>bench-truncation</module>
     </modules>
 
     <dependencies>

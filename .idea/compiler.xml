@@ -18,6 +18,7 @@
           <entry name="$MAVEN_REPOSITORY$/net/sf/jopt-simple/jopt-simple/5.0.4/jopt-simple-5.0.4.jar" />
           <entry name="$MAVEN_REPOSITORY$/org/apache/commons/commons-math3/3.6.1/commons-math3-3.6.1.jar" />
         </processorPath>
+        <module name="bench-truncation" />
         <module name="bench-concat" />
         <module name="bench-charescaped" />
       </profile>

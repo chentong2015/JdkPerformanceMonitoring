@@ -1,4 +1,4 @@
-package escaped.cases;
+package benchmarks.escaped;
 
 public class StringBuilderEscaped {
 
@@ -61,7 +61,7 @@ public class StringBuilderEscaped {
         if (start == 0) {
             return this;
         }
-        // Write remainings chars.
+        // Write remaining chars.
         if (current != start) {
             stringBuilder.append(value.substring(start, current));
         }

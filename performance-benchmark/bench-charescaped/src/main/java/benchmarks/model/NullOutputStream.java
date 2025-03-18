@@ -1,4 +1,4 @@
-package escaped.model;
+package benchmarks.model;
 
 import java.io.IOException;
 import java.io.OutputStream;
