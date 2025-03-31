@@ -16,7 +16,7 @@
     </properties>
 
     <modules>
-        <module>bench-concat</module>
+        <module>bench-demo</module>
         <module>bench-escaped</module>
         <module>bench-truncation</module>
         <module>bench-inputstream</module>
