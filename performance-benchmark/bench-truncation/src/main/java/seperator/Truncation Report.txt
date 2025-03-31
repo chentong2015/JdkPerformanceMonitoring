@@ -1,0 +1,32 @@
+TODO. 基于Average time平均时间
+# Blackhole mode: compiler (auto-detected, use -Djmh.blackhole.autoDetect=false to disable)
+# Warmup: 2 iterations, 10 s each
+# Measurement: 2 iterations, 10 s each
+# Timeout: 10 min per iteration
+# Threads: 1 thread, will synchronize iterations
+# Benchmark mode: Average time, time/op
+Benchmark                                                                      Mode  Cnt  Score   Error   Units
+seperator.TruncationWithSeparatorBenchmark.benchTruncationWithSeparatorAPI     avgt    2  1.997           ms/op
+seperator.TruncationWithSeparatorBenchmark.benchTruncationWithSeparatorBytes   avgt    2  0.095           ms/op
+
+TODO. 基于Single shot单次操作触发时间
+# Blackhole mode: compiler (auto-detected, use -Djmh.blackhole.autoDetect=false to disable)
+# Warmup: 2 iterations, single-shot each
+# Measurement: 2 iterations, single-shot each
+# Timeout: 10 min per iteration
+# Threads: 1 thread
+# Benchmark mode: Single shot invocation time
+Benchmark                                                                      Mode  Cnt  Score   Error   Units
+seperator.TruncationWithSeparatorBenchmark.benchTruncationWithSeparatorAPI       ss    2  2.501           ms/op
+seperator.TruncationWithSeparatorBenchmark.benchTruncationWithSeparatorBytes     ss    2  0.816           ms/op
+
+TODO. 基于Throughput吞吐量/单位时间操作数
+# Blackhole mode: compiler (auto-detected, use -Djmh.blackhole.autoDetect=false to disable)
+# Warmup: 2 iterations, 10 s each
+# Measurement: 2 iterations, 10 s each
+# Timeout: 10 min per iteration
+# Threads: 1 thread, will synchronize iterations
+# Benchmark mode: Throughput, ops/time
+Benchmark                                                                      Mode  Cnt   Score   Error   Units
+truncation.TruncationBenchmark.benchTruncationBytesBuffer                     thrpt    2  10.580          ops/ms
+truncation.TruncationBenchmark.benchTruncationBytesUtf8                       thrpt    2  10.818          ops/ms

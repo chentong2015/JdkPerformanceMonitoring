@@ -7,6 +7,7 @@ public class TruncationBytesUtf8 {
     // TODO. 通过字节数组来截取字符串, 只取字节数组中指定范围长度的字节
     public static TruncatedUTF8Result truncateUtf8(String str, int maxByteLength) {
         byte[] utf8bytes = str.getBytes(StandardCharsets.UTF_8);
+
         // 不超过最大的允许字节长度，则截取的部分为空
         if (utf8bytes.length <= maxByteLength) {
             String result = new String(utf8bytes, 0, utf8bytes.length, StandardCharsets.UTF_8);
@@ -18,13 +19,13 @@ public class TruncationBytesUtf8 {
         while (lastIndex > 0 && isContinuation(utf8bytes[lastIndex])) {
             lastIndex--;
         }
+
+        // TODO. 直接使用字节数组构建字符串
         return new TruncatedUTF8Result(new String(utf8bytes, 0, lastIndex, StandardCharsets.UTF_8),
-               new String(utf8bytes, lastIndex, utf8bytes.length - lastIndex, StandardCharsets.UTF_8),
-                lastIndex < maxByteLength);
+               new String(utf8bytes, lastIndex, utf8bytes.length - lastIndex, StandardCharsets.UTF_8), lastIndex < maxByteLength);
     }
 
-    // TODO. 判断所在的字节位置是否是连续的
-    //  如果连续则不能截取，否则字符截断后会出现乱码 éé�
+    // TODO. 判断所在的字节位置是否连续: 如果连续则不能截取，否则字符截断后会出现乱码 éé�
     private static boolean isContinuation(int c) {
         return (c & 0xc0) == 0x80;
     }
