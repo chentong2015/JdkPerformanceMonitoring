@@ -1,9 +1,9 @@
 package truncation;
 
 import org.openjdk.jmh.annotations.*;
-import truncation.bytes.TruncationBaseBytes;
-import truncation.bytes.TruncationByteBuffer;
-import truncation.bytes.TruncationBytesUtf8;
+import truncation.cases.TruncationBaseBytes;
+import truncation.cases.TruncationByteBuffer;
+import truncation.cases.TruncationBytesUtf8;
 
 import java.util.concurrent.TimeUnit;
 

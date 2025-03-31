@@ -1,4 +1,4 @@
-package truncation.bytes;
+package truncation.cases;
 
 public class TruncationBaseBytes {
 
