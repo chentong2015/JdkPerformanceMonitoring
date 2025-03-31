@@ -1,12 +1,6 @@
-package bytes;
+package truncation.bytes;
 
-public class TruncationBytes {
-
-    public static void main(String[] args) {
-        // 1 + 3 + 2 = 7 bytes
-        String strTruncated = truncateBytes("A陈Ã", 5);
-        System.out.println(strTruncated);
-    }
+public class TruncationBaseBytes {
 
     // TODO. 从前往后构建每个字符，算法复杂度较差
     public static String truncateBytes(String s, int maxByteLength) {

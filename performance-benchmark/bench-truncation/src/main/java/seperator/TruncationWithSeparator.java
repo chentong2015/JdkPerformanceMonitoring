@@ -1,8 +1,8 @@
-package separator;
+package seperator;
 
 import java.nio.charset.StandardCharsets;
 
-public class TruncateWithSeparator {
+public class TruncationWithSeparator {
 
     public static void main(String[] args) {
         String input = "ABS / aas / aai";

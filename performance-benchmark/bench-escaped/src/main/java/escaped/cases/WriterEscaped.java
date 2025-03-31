@@ -11,7 +11,7 @@ public class WriterEscaped extends Writer {
         this.underlying = underlying;
     }
 
-    public void writeEscaped(String value) throws IOException {
+    public void escapeControlLine(String value) throws IOException {
         if (value == null || value.isEmpty()) {
             return;
         }
@@ -23,7 +23,7 @@ public class WriterEscaped extends Writer {
         while (current < length) {
             char c = chars[current];
             // Search for character needing escaping
-            if (c < 0x20 || c == 0x22 || c == 0x5C) {
+            if (c < 0x20 || c == 0x22 || c == 0x5C || c >= 0x80) {
                 // What we have so far does not contains anything to escape, write them all in once.
                 underlying.write(chars, start, current - start);
                 switch (c) {

@@ -12,7 +12,7 @@ import java.util.concurrent.locks.Condition;
 import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantLock;
 
-public class AsyncEscapedWriterBenchmark {
+public class EscapedWriterBenchmark2 {
 
     private String value;
     private BufferedOutputStream bufferedOutput;
@@ -22,6 +22,7 @@ public class AsyncEscapedWriterBenchmark {
     private Condition notEmpty = lock.newCondition();
     private ConcurrentLinkedDeque<TruncatedInfo> infoDeque = new ConcurrentLinkedDeque<>();
 
+    // TODO. 使用异步线程来执行IO数据输出
     private Thread writeThread = new Thread(new Runnable() {
         @Override
         public void run() {

@@ -1,40 +1,26 @@
-package bytes;
+package truncation.bytes;
 
 import java.nio.charset.StandardCharsets;
 
 public class TruncationBytesUtf8 {
 
-    private static final int MAX_COLUMN_BYTE_LENGTH = 5;
-
-    public static void main(String[] args) {
-        String value = "ééé";
-        System.out.println(value.length()); // 3个字符
-        System.out.println(value.getBytes(StandardCharsets.UTF_8).length); // 6个字节
-
-        byte[] buffer = value.getBytes(StandardCharsets.UTF_8);
-        if (buffer.length > MAX_COLUMN_BYTE_LENGTH) {
-            TruncatedUTF8Result truncatedString = truncateUtf8(buffer);
-            System.out.println(truncatedString.getTruncatedResult());
-            System.out.println(truncatedString.getTruncatedPart());
-        }
-    }
-
     // TODO. 通过字节数组来截取字符串, 只取字节数组中指定范围长度的字节
-    public static TruncatedUTF8Result truncateUtf8(byte[] utf8bytes) {
+    public static TruncatedUTF8Result truncateUtf8(String str, int maxByteLength) {
+        byte[] utf8bytes = str.getBytes(StandardCharsets.UTF_8);
         // 不超过最大的允许字节长度，则截取的部分为空
-        if (utf8bytes.length <= MAX_COLUMN_BYTE_LENGTH) {
+        if (utf8bytes.length <= maxByteLength) {
             String result = new String(utf8bytes, 0, utf8bytes.length, StandardCharsets.UTF_8);
             return new TruncatedUTF8Result(result, "", false);
         }
 
         // 最后位置的byte可能是一个char字符的一部分，需要整个字符截取
-        int lastIndex = MAX_COLUMN_BYTE_LENGTH;
+        int lastIndex = maxByteLength;
         while (lastIndex > 0 && isContinuation(utf8bytes[lastIndex])) {
             lastIndex--;
         }
         return new TruncatedUTF8Result(new String(utf8bytes, 0, lastIndex, StandardCharsets.UTF_8),
                new String(utf8bytes, lastIndex, utf8bytes.length - lastIndex, StandardCharsets.UTF_8),
-                lastIndex < MAX_COLUMN_BYTE_LENGTH);
+                lastIndex < maxByteLength);
     }
 
     // TODO. 判断所在的字节位置是否是连续的
@@ -45,7 +31,7 @@ public class TruncationBytesUtf8 {
 
 
     // 面向对象设计: 截取后的结果对象(包含结果数据和截取掉的数据)
-    static class TruncatedUTF8Result {
+    public static class TruncatedUTF8Result {
         private final String result;
         private final String truncatedPart;
         private final boolean isOverflow;

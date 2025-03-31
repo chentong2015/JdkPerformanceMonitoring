@@ -1,26 +1,9 @@
-package line_control;
+package escaped.cases;
 
 import java.io.IOException;
 import java.io.Writer;
-import java.nio.file.Files;
-import java.nio.file.Path;
-import java.nio.file.Paths;
 
-// 换行符缩合:
-// 对于包含换行符号的字符串，需要将对于的换行符号转成对应的字符串进行连接
-// String.replaceAll()方法在某些场景不够高效，需要自定义重写算法
-public class LineControlCondensation {
-
-    public static void main(String[] args) throws IOException {
-        Path path = Paths.get("filenamePrefix" + "_warnings.csv");
-        Writer writer = Files.newBufferedWriter(path);
-        writer.write("Table,TargetData,Error");
-        writer.write("\n");
-
-        writer.write('"');
-        escapeLineControls("lines value", writer);
-        writer.write('"');
-    }
+public class TestingEscaped {
 
     public static void escapeLineControls(final String value, final Writer out) throws IOException {
         int start = 0;

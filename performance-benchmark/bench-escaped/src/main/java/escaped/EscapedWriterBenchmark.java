@@ -1,7 +1,7 @@
 package escaped;
 
 import escaped.cases.StringBuilderEscaped;
-import escaped.cases.StringUtilsEscaped;
+import escaped.cases.StringAPIEscaped;
 import escaped.cases.WriterEscaped;
 import escaped.model.NullOutputStream;
 import escaped.model.NullWriter;
@@ -25,6 +25,10 @@ public class EscapedWriterBenchmark {
     private String value;
     private static final String LINE_SEPARATOR = "\n";
     private static final String DOUBLE_QUOTES = "\"\"\"";
+
+    public static void main(String[] args) throws Exception {
+        org.openjdk.jmh.Main.main(args);
+    }
 
     @Setup
     public void setup() {
@@ -51,15 +55,15 @@ public class EscapedWriterBenchmark {
     }
 
     @Benchmark
-    public void testStringUtilsEscaped() throws IOException {
-        testStringUtilsEscaped("ABC_DBF", "M_DESCRIPTION", "varchar", 255, value, value);
+    public void testStringAPIEscaped() throws IOException {
+        testStringAPIEscaped("ABC_DBF", "M_DESCRIPTION", "varchar", 255, value, value);
     }
 
-    public synchronized void testStringUtilsEscaped(final String tableName, final String columnName,
+    public synchronized void testStringAPIEscaped(final String tableName, final String columnName,
            String columnTypeName, int columnDisplaySize, String columnValue, String truncatedValue) throws IOException {
         StringBuilder warningBuilder = new StringBuilder();
-        String formattedSourceData = StringUtilsEscaped.escapeControlCharacters(columnValue);
-        String formattedTargetData = StringUtilsEscaped.escapeControlCharacters(truncatedValue);
+        String formattedSourceData = StringAPIEscaped.escapeControlLine(columnValue);
+        String formattedTargetData = StringAPIEscaped.escapeControlLine(truncatedValue);
 
         warningBuilder.append(tableName).append(",")
                 .append(columnName).append(",").append(columnTypeName.toLowerCase())
@@ -108,11 +112,11 @@ public class EscapedWriterBenchmark {
         outputWriter.write(")");
         outputWriter.write(",");
         outputWriter.write(DOUBLE_QUOTES);
-        outputWriter.writeEscaped(columnValue);
+        outputWriter.escapeControlLine(columnValue);
         outputWriter.write(DOUBLE_QUOTES);
         outputWriter.write(",");
         outputWriter.write(DOUBLE_QUOTES);
-        outputWriter.writeEscaped(truncatedValue);
+        outputWriter.escapeControlLine(truncatedValue);
         outputWriter.write(DOUBLE_QUOTES);
         outputWriter.write(",");
         outputWriter.write("Truncated");

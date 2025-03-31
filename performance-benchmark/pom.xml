@@ -17,7 +17,7 @@
 
     <modules>
         <module>bench-concat</module>
-        <module>bench-charescaped</module>
+        <module>bench-escaped</module>
         <module>bench-truncation</module>
         <module>bench-inputstream</module>
     </modules>

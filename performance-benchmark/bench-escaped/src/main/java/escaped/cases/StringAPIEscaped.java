@@ -1,10 +1,11 @@
 package escaped.cases;
 
-public class StringUtilsEscaped {
+public class StringAPIEscaped {
 
     private static final String LINE_SEPARATOR = "\n";
 
-    public static String escapeControlCharacters(String value) {
+    // TODO. String.replaceAll() 方法在某些场景不够高效
+    public static String escapeControlLine(String value) {
         if (value.contains(LINE_SEPARATOR)) {
             switch (LINE_SEPARATOR) {
                 case "\r\n":
