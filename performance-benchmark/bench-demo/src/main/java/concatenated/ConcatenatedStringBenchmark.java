@@ -1,6 +1,5 @@
 package concatenated;
 
-import benchmark.SampleBenchmark;
 import org.openjdk.jmh.annotations.*;
 import org.openjdk.jmh.results.format.ResultFormatType;
 import org.openjdk.jmh.runner.Runner;
