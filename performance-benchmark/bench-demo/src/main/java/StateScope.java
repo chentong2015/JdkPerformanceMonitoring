@@ -1,5 +1,3 @@
-package benchmark;
-
 import com.google.common.hash.Hasher;
 import com.google.common.hash.Hashing;
 import org.openjdk.jmh.annotations.*;
@@ -8,8 +6,7 @@ import org.openjdk.jmh.annotations.*;
 public class StateScope {
 
     // TODO. @Param必须设置在@State注解的类型中
-    // 设置执行的参数，每一次取其中一个数据
-    // # Parameters: (iterations = 100)
+    // # Parameters: (iterations = 100) 设置执行迭代的次数
     @Param({"100", "200", "300", "500", "1000"})
     public int iterations;
 

@@ -1,6 +1,11 @@
 package concatenated;
 
+import benchmark.SampleBenchmark;
 import org.openjdk.jmh.annotations.*;
+import org.openjdk.jmh.results.format.ResultFormatType;
+import org.openjdk.jmh.runner.Runner;
+import org.openjdk.jmh.runner.options.Options;
+import org.openjdk.jmh.runner.options.OptionsBuilder;
 
 import java.util.concurrent.TimeUnit;
 
@@ -10,6 +15,17 @@ import java.util.concurrent.TimeUnit;
 @BenchmarkMode(Mode.SingleShotTime)
 @OutputTimeUnit(TimeUnit.MILLISECONDS)
 public class ConcatenatedStringBenchmark {
+
+    // TODO. 生成特定的JSON格式报告，用于可视化
+    // Benchmark result is saved to StringBenchmark.json
+    public static void main(String[] args) throws Exception {
+        Options opt = new OptionsBuilder()
+                .include(ConcatenatedStringBenchmark.class.getSimpleName())
+                .result("StringBenchmark.json")
+                .resultFormat(ResultFormatType.JSON)
+                .build();
+        new Runner(opt).run();
+    }
 
     @Benchmark
     public void benchmarkStringConcat() {

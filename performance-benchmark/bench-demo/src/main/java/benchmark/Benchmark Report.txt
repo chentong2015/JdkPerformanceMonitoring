@@ -1,0 +1,11 @@
+# Blackhole mode: compiler (auto-detected, use -Djmh.blackhole.autoDetect=false to disable)
+# Warmup: 2 iterations, 10 s each
+# Measurement: 5 iterations, 10 s each
+# Timeout: 10 min per iteration
+# Threads: 1 thread, will synchronize iterations
+# Benchmark mode: Throughput, ops/time
+# Benchmark: benchmark.SampleBenchmark.sampleBenchmark
+# Parameters: (iterations = 30) ==> 设置参数控制迭代次数
+Benchmark                        (iterations)   Mode  Cnt        Score        Error  Units
+SampleBenchmark.sampleBenchmark            10  thrpt    5  9956107.894 ± 331123.261  ops/s
+SampleBenchmark.sampleBenchmark            30  thrpt    5  4902375.692 ± 940366.831  ops/s

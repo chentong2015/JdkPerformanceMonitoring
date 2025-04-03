@@ -1,5 +1,3 @@
-package benchmark;
-
 import org.openjdk.jmh.annotations.Level;
 import org.openjdk.jmh.annotations.Setup;
 

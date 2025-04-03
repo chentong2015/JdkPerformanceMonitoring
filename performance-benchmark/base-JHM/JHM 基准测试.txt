@@ -1,0 +1,11 @@
+Java Microbenchmark Harness (JMH)
+Building, running, and analysing nano/micro/milli/macro benchmarks
+written in Java and other languages targeting the JVM.
+
+JMH JSON Report 可视化报告工具
+https://jmh.morethan.io/
+https://deepoove.com/jmh-visual-chart/
+
+https://github.com/openjdk/jmh
+https://openjdk.org/projects/code-tools/jmh/
+https://hg.openjdk.org/code-tools/jmh/file/tip/jmh-samples/src/main/java/org/openjdk/jmh/samples/

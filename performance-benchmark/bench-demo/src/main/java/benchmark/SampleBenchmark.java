@@ -6,6 +6,7 @@ import org.openjdk.jmh.runner.options.Options;
 import org.openjdk.jmh.runner.options.OptionsBuilder;
 
 import java.security.SecureRandom;
+import java.util.concurrent.TimeUnit;
 
 public class SampleBenchmark {
 
@@ -20,7 +21,7 @@ public class SampleBenchmark {
     // 作用域为每个Benchmark测试Case提供参数对象
     @State(Scope.Benchmark)
     public static class ExecutionPlan {
-        @Param({ "1", "3"})
+        @Param({ "10", "30"})
         public int iterations;
 
         public int value;
@@ -37,6 +38,7 @@ public class SampleBenchmark {
     @Fork(value = 1, warmups = 1)
     @Warmup(iterations = 2)
     @BenchmarkMode(Mode.Throughput)
+    @OutputTimeUnit(TimeUnit.SECONDS)
     public void sampleBenchmark(ExecutionPlan plan) {
         int resultValue = 0;
         StringBuilder finalName = new StringBuilder();
