@@ -21,10 +21,10 @@
         <module name="bench-demo" />
         <module name="bench-escaped" />
         <module name="bench-truncation" />
-        <module name="bench-inputstream" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="bench-inputstream" target="17" />
       <module name="examples" target="17" />
     </bytecodeTargetLevel>
   </component>

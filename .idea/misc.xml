@@ -10,6 +10,7 @@
     </option>
     <option name="ignoredFiles">
       <set>
+        <option value="$PROJECT_DIR$/performance-benchmark/bench-inputstream/pom.xml" />
         <option value="$PROJECT_DIR$/performance-benchmark/examples/pom.xml" />
       </set>
     </option>

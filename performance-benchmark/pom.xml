@@ -19,7 +19,6 @@
         <module>bench-demo</module>
         <module>bench-escaped</module>
         <module>bench-truncation</module>
-        <module>bench-inputstream</module>
     </modules>
 
     <dependencies>
@@ -32,17 +31,6 @@
             <groupId>org.openjdk.jmh</groupId>
             <artifactId>jmh-generator-annprocess</artifactId>
             <version>1.37</version>
-        </dependency>
-
-        <dependency>
-            <groupId>org.apache.commons</groupId>
-            <artifactId>commons-lang3</artifactId>
-            <version>3.13.0</version>
-        </dependency>
-        <dependency>
-            <groupId>com.google.guava</groupId>
-            <artifactId>guava</artifactId>
-            <version>32.1.1-jre</version>
         </dependency>
     </dependencies>
 
