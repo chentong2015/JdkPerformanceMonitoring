@@ -11,10 +11,6 @@ import java.util.concurrent.TimeUnit;
 @OutputTimeUnit(TimeUnit.MILLISECONDS)
 public class ConcatenatedStringBenchmark {
 
-    public static void main(String[] args) throws Exception {
-        org.openjdk.jmh.Main.main(args);
-    }
-
     @Benchmark
     public void benchmarkStringConcat() {
         String str = "";
