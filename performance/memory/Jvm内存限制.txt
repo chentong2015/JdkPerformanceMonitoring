@@ -1,0 +1,15 @@
+TODO. 堆大小设置失效: 容器环境Docker、K8s
+JVM默认会根据容器限制的内存来推算最大堆，而不是你机器的物理内存
+即便设置-Xmx8G，如果容器的内存限制只有2G，实际上可用堆也不会到8G
+检查docker run --memory 参数
+-XX:+UnlockExperimentalVMOptions
+-XX:+UseContainerSupport(JDK 10+ 默认启用)
+
+TODO. JVM -Xmx参数限制: 无法在Runtime运行时自动扩容或动态修改
+Current issue: it is not possible to increase the size of Java heap at runtime_memory_outside.
+The only one way to increase the Heap size is to restart the JVM with a new -Xmx parameter.
+1. 如果重启JVM会导致停机中断的代价
+2. 如果设置较大的最大Heap堆内存可能导致资源的浪费
+
+Dynamic Max Memory Limit
+https://openjdk.org/jeps/8204088

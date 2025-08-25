@@ -1,0 +1,27 @@
+案例场景: Java应用在8G内存的机器运行，应用需要导入大文件造成至少4G内存的开销
+启动应用时设置-Xmx4G将最大Heap堆内存固定在4G大小(不设置时默认使用2G内存运行)
+运行一段时间后达到最大可使用内存，造成性能下降并抛出OutOfMemoryError
+
+TODO. 当默认的最大内存不够时，增大Heap堆内存空间
+> java -Xmx5G -jar microservice-server.jar
+
+TODO. JVM默认Heap大小为系统内存25%
+$ java -Xmx5G -XX:+PrintFlagsFinal -version | grep MaxHeapSize
+   size_t MaxHeapSize             = 5368709120                                {product} {command line}
+   size_t SoftMaxHeapSize         = 5368709120                             {manageable} {ergonomic}
+$ java -XX:+PrintFlagsFinal -version -Xmx5G | grep MaxHeapSize
+   size_t MaxHeapSize             = 8480882688                                {product} {ergonomic}
+   size_t SoftMaxHeapSize         = 8480882688                             {manageable} {ergonomic}
+
+TODO. 查看运行的机器内存
+Maximum heap size: Smaller of 1/4th of the physical memory or 1GB !!
+linux>free -h
+              total   used    free    shared  buff/cache   available
+       Mem:   62Gi    14Gi    43Gi    1.5Gi   6.0Gi        47Gi
+       Swap:  0B      0B      0B
+linux> java -XshowSettings:vm
+       VM settings: Max. Heap Size (Estimated): 7.90G
+       Using VM: OpenJDK 64-Bit Server VM
+linux> java -XX:+PrintFlagsFinal -version | grep -iE 'HeapSize|PermSize|ThreadStackSize'
+
+windows> java -XX:+PrintFlagsFinal -version | findstr /i "HeapSize PermSize ThreadStackSize"
