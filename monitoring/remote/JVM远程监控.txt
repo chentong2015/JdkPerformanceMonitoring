@@ -1,0 +1,8 @@
+TODO. 使用VisualVM远程监控服务器上运行的Java应用
+
+程序启动时配置JMX远程连接的端口Port
+> java -Dcom.sun.management.jmxremote
+   -Dcom.sun.management.jmxremote.port=9010
+   -Dcom.sun.management.jmxremote.authenticate=false
+   -Dcom.sun.management.jmxremote.ssl=false
+   -Xmx8g -jar JavaBatch.jar

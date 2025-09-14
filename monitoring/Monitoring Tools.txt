@@ -4,6 +4,11 @@ VisualVM 分析JVM数据
 https://visualvm.github.io/gettingstarted.html
 https://visualvm.github.io/startupprofiler.html
 
+GraalVM 监控JVM运行
+https://www.graalvm.org/downloads/
+To improve the performance of Java virtual machine (JVM)-based languages to match native languages.
+To reduce the startup time of JVM-based applications by compiling them ahead-of-time.
+
 JConsole 监视和管理控制台
 GCEasy    日志分析工具
 GCViewer  日志分析工具

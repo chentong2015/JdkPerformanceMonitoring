@@ -1,5 +1,6 @@
-JProfiler 分析.hprof文件, 分析HeapDump OOM内存泄露
-https://www.baeldung.com/java-heap-dump-capture
+TODO. 设置在发生OOM时输出dump文件
+> -XX:+HeapDumpOnOutOfMemoryError -XX:HeapDumpPath=/path/to/heapdump.hprof
 
-JProfiler 分析JVM堆中二进制数据，反序列化并比较不同
+JProfiler 分析.hprof文件, 分析JVM堆中二进制数据, 反序列化比较
+https://www.baeldung.com/java-heap-dump-capture
 https://www.ej-technologies.com/resources/jprofiler/help/doc/main/snapshots.html
