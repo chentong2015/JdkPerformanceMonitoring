@@ -1,0 +1,34 @@
+$ javap -c ListNode.class
+  Compiled from "ListNode.java"
+  public class ListNode {
+    public int value;
+
+    public ListNode next;
+
+    public ListNode();
+      Code:
+         0: aload_0
+         1: invokespecial #1                  // Method java/lang/Object."<init>":()V
+         4: return
+
+    public ListNode(int);
+      Code:
+         0: aload_0
+         1: invokespecial #1                  // Method java/lang/Object."<init>":()V
+         4: aload_0
+         5: iload_1
+         6: putfield      #7                  // Field value:I
+         9: return
+
+    public ListNode(int, ListNode);
+      Code:
+         0: aload_0
+         1: invokespecial #1                  // Method java/lang/Object."<init>":()V
+         4: aload_0
+         5: iload_1
+         6: putfield      #7                  // Field value:I
+         9: aload_0
+        10: aload_2
+        11: putfield      #13                 // Field next:LListNode;
+        14: return
+  }

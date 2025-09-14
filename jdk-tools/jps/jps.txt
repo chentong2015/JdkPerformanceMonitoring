@@ -1,31 +1,31 @@
-显示系统中所有的虚拟机进程
-获取虚拟机进程对应的PID并用于其它命令的分析
+JPS: JVM Process Status Tool
+显示系统中所有的虚拟机进程，获取虚拟机进程对应的PID
 
 > jps -q  仅获取PID用于脚本
 > jps -l  查看PID和主类名或JAR名
-7858  /home/centos/app.jar              // This is our app
-15940 JavaRuntimeAPI.pid.JavaProcessId  // This is our main class
-8580  jdk.jcmd/sun.tools.jps.Jps
-11480 org.jetbrains.jps.cmdline.Launche
+  7858  /home/centos/app.jar              // This is our app
+  15940 JavaRuntimeAPI.pid.JavaProcessId  // This is our main class
+  8580  jdk.jcmd/sun.tools.jps.Jps
+  11480 org.jetbrains.jps.cmdline.Launche
 
 > jps -l | grep catalina  查找Tomcat/PID
-54321 org.apache.catalina.startup.Bootstrap
+  54321 org.apache.catalina.startup.Bootstrap
 
 > jps -v 查看JVM参数和VM Options系统属性
-12345 MyApplication -Xmx1024m -Dspring.profiles.active=prod
-28227 Audit.jar
-      -Djava.awt.headless=true
-      -Duser.timezone=UTC
-      -Djava.net.preferIPv4Stack=true
-      -Djsse.enableSNIExtension=false -D
-      sun.net.inetaddr.ttl=300
-      -Xms256m -Xmx256m -XX:MaxMetaspaceSize=172m
-      -Djava.io.tmpdir=../tmp
-      -Dfile.encoding=UTF-8
-      -Dspring.config.additional-location=optional:file:/home/centos/ls-pfm-tools/CustomFiles/conf/,file:../conf/
-      -Dlogging.file.name=../../log/Audit.log
-      -Dspring.pid.file=../tmp/Audit.pid
-      -Djavax.net.ssl.trustStore=/home/centos/ls-pfm-tools/Certificates/CA/cacerts.jks
-      -Djavax.net.ssl.trustStorePassword=changeit
-      --add-opens=java.base/java.lang=ALL-UNNAMED
-      --add-exports=java.base/com.sun.crypto.provider=ALL-UNNAMED
+  12345 MyApplication -Xmx1024m -Dspring.profiles.active=prod
+  28227 Audit.jar
+    -Djava.awt.headless=true
+    -Duser.timezone=UTC
+    -Djava.net.preferIPv4Stack=true
+    -Djsse.enableSNIExtension=false -D
+    sun.net.inetaddr.ttl=300
+    -Xms256m -Xmx256m -XX:MaxMetaspaceSize=172m
+    -Djava.io.tmpdir=../tmp
+    -Dfile.encoding=UTF-8
+    -Dspring.config.additional-location=optional:file:/home/centos/ls-pfm-tools/CustomFiles/conf/,file:../conf/
+    -Dlogging.file.name=../../log/Audit.log
+    -Dspring.pid.file=../tmp/Audit.pid
+    -Djavax.net.ssl.trustStore=/home/centos/ls-pfm-tools/Certificates/CA/cacerts.jks
+    -Djavax.net.ssl.trustStorePassword=changeit
+    --add-opens=java.base/java.lang=ALL-UNNAMED
+    --add-exports=java.base/com.sun.crypto.provider=ALL-UNNAMED
