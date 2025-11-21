@@ -2,7 +2,7 @@ package truncation.cases;
 
 import java.nio.charset.StandardCharsets;
 
-public class TruncationBytesUtf8 {
+public class TruncationUtf8CodePoint {
 
     // TODO. 通过字节数组来截取字符串, 只取字节数组中指定范围长度的字节
     public static TruncationUtf8Result truncateUtf8(String str, int maxByteLength) {

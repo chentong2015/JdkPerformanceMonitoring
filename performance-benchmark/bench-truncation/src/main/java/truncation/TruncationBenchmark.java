@@ -3,7 +3,7 @@ package truncation;
 import org.openjdk.jmh.annotations.*;
 import truncation.cases.TruncationBaseBytes;
 import truncation.cases.TruncationByteBuffer;
-import truncation.cases.TruncationBytesUtf8;
+import truncation.cases.TruncationUtf8CodePoint;
 import truncation.cases.TruncationUtf8Result;
 
 import java.util.concurrent.TimeUnit;
@@ -39,7 +39,7 @@ public class TruncationBenchmark {
     public void benchTruncationBytesUtf8() {
         for (int index = 0; index < 1000; index++) {
             String str = "A陈ÃabcedefA陈Ãabcedefééé"; // 32 bytes
-            TruncationUtf8Result truncatedString = TruncationBytesUtf8.truncateUtf8(str, 27);
+            TruncationUtf8Result truncatedString = TruncationUtf8CodePoint.truncateUtf8(str, 27);
         }
     }
 }
