@@ -1,8 +1,8 @@
-package seperator.cases;
+package truncation.seperator;
 
 import java.nio.charset.StandardCharsets;
 
-public class TruncationWithSeparatorBytes {
+public class TruncationWithSepBytes {
 
     // TODO: 如果超过限定的字节长度，则需要按照分隔符来截取
     public static String truncate(String input, int maxByteLength, String separator) {

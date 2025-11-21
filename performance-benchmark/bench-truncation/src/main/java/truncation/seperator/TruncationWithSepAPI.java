@@ -1,8 +1,8 @@
-package seperator.cases;
+package truncation.seperator;
 
 import java.nio.charset.StandardCharsets;
 
-public class TruncationWithSeparatorAPI {
+public class TruncationWithSepAPI {
 
     // TODO: 直接使用StringBuilder API来完成字符串的截取和拼接
     public static String truncate(String input, int maxByteLength, String separator) {

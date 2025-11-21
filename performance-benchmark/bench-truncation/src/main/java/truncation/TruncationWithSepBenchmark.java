@@ -1,8 +1,8 @@
-package seperator;
+package truncation;
 
 import org.openjdk.jmh.annotations.*;
-import seperator.cases.TruncationWithSeparatorAPI;
-import seperator.cases.TruncationWithSeparatorBytes;
+import truncation.seperator.TruncationWithSepAPI;
+import truncation.seperator.TruncationWithSepBytes;
 import java.util.concurrent.TimeUnit;
 
 @Fork(value = 1)
@@ -10,7 +10,7 @@ import java.util.concurrent.TimeUnit;
 @Measurement(iterations = 2)
 @BenchmarkMode(Mode.Throughput)
 @OutputTimeUnit(TimeUnit.MILLISECONDS)
-public class TruncationWithSeparatorBenchmark {
+public class TruncationWithSepBenchmark {
 
     public static void main(String[] args) throws Exception {
         org.openjdk.jmh.Main.main(args);
@@ -20,7 +20,7 @@ public class TruncationWithSeparatorBenchmark {
     public void benchTruncationWithSeparatorAPI() {
          for (int index = 0; index < 1000; index++) {
              String input = "ABS/aas/à/éé/ab/asa/:/:éééé://éé////ééééé////ééé///abac/////sdd///a/ah/sd/sdf/";
-             String result1 = TruncationWithSeparatorAPI.truncate(input, 9, "/");
+             String result1 = TruncationWithSepAPI.truncate(input, 9, "/");
          }
     }
 
@@ -28,7 +28,7 @@ public class TruncationWithSeparatorBenchmark {
     public void benchTruncationWithSeparatorBytes() {
         for (int index = 0; index < 1000; index++) {
             String input = "ABS/aas/à/éé/ab/asa/:/:éééé://éé////ééééé////ééé///abac/////sdd///a/ah/sd/sdf/";
-            String result1 = TruncationWithSeparatorBytes.truncate(input, 9, "/");
+            String result1 = TruncationWithSepBytes.truncate(input, 9, "/");
         }
     }
 }

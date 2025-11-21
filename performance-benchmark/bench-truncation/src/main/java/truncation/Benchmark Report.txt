@@ -33,3 +33,14 @@ Benchmark                                        Mode  Cnt   Score   Error   Uni
 TruncationBenchmark.benchTruncationBaseBytes    thrpt    2   8.746          ops/ms
 TruncationBenchmark.benchTruncationBytesBuffer  thrpt    2  10.937          ops/ms
 TruncationBenchmark.benchTruncationBytesUtf8    thrpt    2  11.035          ops/ms
+
+TODO. 基于Throughput吞吐量/单位时间操作数
+# Blackhole mode: compiler (auto-detected, use -Djmh.blackhole.autoDetect=false to disable)
+# Warmup: 2 iterations, 10 s each
+# Measurement: 2 iterations, 10 s each
+# Timeout: 10 min per iteration
+# Threads: 1 thread, will synchronize iterations
+# Benchmark mode: Throughput, ops/time
+Benchmark                                                                      Mode  Cnt   Score   Error   Units
+truncation.TruncationBenchmark.benchTruncationBytesBuffer                     thrpt    2  10.580          ops/ms
+truncation.TruncationBenchmark.benchTruncationBytesUtf8                       thrpt    2  10.818          ops/ms
