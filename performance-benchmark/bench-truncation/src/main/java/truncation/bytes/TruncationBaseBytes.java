@@ -2,7 +2,7 @@ package truncation.bytes;
 
 public class TruncationBaseBytes {
 
-    // TODO. 从前往后构建每个字符，算法复杂度较差
+    // TODO. 从前往后构建每个字符 ==> 算法复杂度较差
     public static String truncateBytes(String s, int maxByteLength) {
         StringBuilder output = new StringBuilder();
         int currentLength = 0;

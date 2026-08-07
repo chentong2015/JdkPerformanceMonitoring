@@ -7,7 +7,7 @@ public class TruncationBaseBytes2 {
     private static final int SURROGATE_RANGE_FIRST_CODE_POINT = 0xD800;
     private static final int SURROGATE_RANGE_LAST_CODE_POINT = 0xDFFF;
 
-    // TODO. 直接累计字符的长度，直到超过限制
+    // TODO. 累计字符的长度直到超过限制
     public static String truncateUTF8(String originalValue, int maxBytes) {
         if (originalValue == null)
             return null;

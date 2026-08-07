@@ -2,7 +2,7 @@ package truncation.bytes;
 
 import java.nio.charset.StandardCharsets;
 
-public class TruncationUtf8CodePoint {
+public class TruncationCodePointUtf8 {
 
     // TODO. 判断CodePoint联系性, 取字节数组中指定范围长度的字节
     public static TruncationUtf8Result truncateUtf8(String str, int maxByteLength) {
