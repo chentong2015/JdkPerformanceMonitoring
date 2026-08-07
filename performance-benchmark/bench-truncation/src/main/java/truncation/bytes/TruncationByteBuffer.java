@@ -1,4 +1,4 @@
-package truncation.cases;
+package truncation.bytes;
 
 import java.nio.ByteBuffer;
 import java.nio.CharBuffer;

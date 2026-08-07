@@ -10,7 +10,7 @@ import java.util.concurrent.TimeUnit;
 @Measurement(iterations = 2)
 @BenchmarkMode(Mode.Throughput)
 @OutputTimeUnit(TimeUnit.MILLISECONDS)
-public class TruncationWithSepBenchmark {
+public class TruncationSepratorBenchmark {
 
     public static void main(String[] args) throws Exception {
         org.openjdk.jmh.Main.main(args);
