@@ -27,7 +27,6 @@ public class TruncationCodePointUtf8 {
         return (c & 0xc0) == 0x80;
     }
 
-
     // 面向对象设计: 封装字符串截取的结果
     public static class TruncationUtf8Result {
 

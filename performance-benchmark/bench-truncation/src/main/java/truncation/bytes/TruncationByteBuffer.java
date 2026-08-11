@@ -23,44 +23,4 @@ public class TruncationByteBuffer {
 
         return new String(output.array(), 0, output.position(), StandardCharsets.UTF_8);
     }
-
-    // TODO. 测试验证逻辑正确性
-    // Truncates a string to at most {@code maxBytes} bytes once encoded with the given charset,
-    // without cutting a multi-byte character in half.
-    public static String truncateByBytes(String input, int maxBytes) {
-        if (input == null) {
-            return null;
-        }
-        if (maxBytes <= 0) {
-            return "";
-        }
-        byte[] bytes = input.getBytes(StandardCharsets.UTF_8);
-        if (bytes.length <= maxBytes) {
-            return input;
-        }
-
-        CharsetDecoder decoder = StandardCharsets.UTF_8.newDecoder()
-                .onMalformedInput(CodingErrorAction.REPORT)
-                .onUnmappableCharacter(CodingErrorAction.REPORT);
-        ByteBuffer inBuffer = ByteBuffer.wrap(bytes);
-        CharBuffer outBuffer = CharBuffer.allocate(maxBytes);
-
-        for (int length = maxBytes; length > 0; length--) {
-            inBuffer.clear();
-            inBuffer.limit(length);
-            outBuffer.clear();
-            decoder.reset();
-
-            CoderResult result = decoder.decode(inBuffer, outBuffer, true);
-            if (result.isUnderflow()) {
-                CoderResult flushResult = decoder.flush(outBuffer);
-                if (flushResult.isUnderflow()) {
-                    outBuffer.flip();
-                    return outBuffer.toString();
-                }
-            }
-            // error or overflow: the last byte(s) cut a character in half, retry shorter
-        }
-        return "";
-    }
 }
