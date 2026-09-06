@@ -6,27 +6,18 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="monitoring-metrics" />
         <module name="JvmPerformanceMonitoring" />
-      </profile>
-      <profile name="Annotation profile for performance-benchmark" enabled="true">
-        <sourceOutputDir name="target/generated-sources/annotations" />
-        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
-        <outputRelativeToContentRoot value="true" />
-        <processorPath useClasspath="false">
-          <entry name="$MAVEN_REPOSITORY$/org/openjdk/jmh/jmh-generator-annprocess/1.37/jmh-generator-annprocess-1.37.jar" />
-          <entry name="$MAVEN_REPOSITORY$/org/openjdk/jmh/jmh-core/1.37/jmh-core-1.37.jar" />
-          <entry name="$MAVEN_REPOSITORY$/net/sf/jopt-simple/jopt-simple/5.0.4/jopt-simple-5.0.4.jar" />
-          <entry name="$MAVEN_REPOSITORY$/org/apache/commons/commons-math3/3.6.1/commons-math3-3.6.1.jar" />
-        </processorPath>
-        <module name="bench-demo" />
-        <module name="bench-truncation" />
-        <module name="bench-escaped" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="bench-demo" target="17" />
+      <module name="bench-escaped" target="17" />
       <module name="bench-inputstream" target="17" />
+      <module name="bench-truncation" target="17" />
       <module name="examples" target="17" />
+      <module name="jvm-runtime-healthcheck" target="17" />
+      <module name="jvm-runtime-sections" target="17" />
+      <module name="monitoring-metrics" target="17" />
     </bytecodeTargetLevel>
   </component>
 </project>

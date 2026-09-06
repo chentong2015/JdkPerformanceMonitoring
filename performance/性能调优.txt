@@ -1,19 +1,6 @@
-TODO. 分析造成性能问题的不同层面
+TODO. 系统性能的不同层面
 系统的性能问题受到多个方面的影响，有多种参数共同决定
-1. 架构层面分析: 项目模块和组件，前后端分离，分布式策略和LB负载
-2. 应用程序层面: 多线程问题，代码bug(读写异常)，JVM监控
-3. 系统OS层面: Log日志分析，网络延迟问题
-4. 数据库层面: 连接池问题，SQL耗时，事务问题，Server配置
-
-TODO. 实战项目的性能优化策略
-1. 线程池的配置: @Async正对异步操作的线程池
-   Executor getAsyncExecutor()
-   ForkJoinPool 并发线程池效果
-2. DB连接池 => 连接池中线程数量应该基于并发的线程数
-   datasource.hikari.maximum-pool-size=100
-   datasource.hikari.minimum-idle=5
-3. 大量并行Stream流操作问题 Stream..parallel()
-3. 大量数据操作的性能问题 UtilsString.truncateUTF8()
-4. Entity/DAO/Repo 持久化层查询的优化
-4. Searching Page 分页数据查询的优化
-5. DataBase 数据库层锁和事务等配置优化
+1. 应用程序层面: 多线程问题，代码bug(读写异常)，复杂度高
+2. 架构层面分析: 模块和组件，LB负载异常，分布式策略
+3. 数据库层面: 连接池问题，SQL耗时，事务问题，DB配置
+4. 系统OS层面: CPU资源，内存限制，网络延迟问题
